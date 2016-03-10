@@ -22,3 +22,5 @@ app.get('/location', mainCtrl.getLocation);
 app.get('/occupations', mainCtrl.getOccupations);
 
 app.get('/occupations/latest', mainCtrl.getLatestOccupation);
+
+app.get('/hobbies', mainCtrl.getHobbies);

@@ -7,8 +7,6 @@ var personInfo = {
 
 	, occupations: ["Project Coordinator", "Writer", "QA Coordinator"]
 
-	, latestOccupation: personInfo[occupations[personInfo[occupations.length - 1]]]
-
 	, hobbies: [{
 			name: "Reading",
 			type: "Enrichment"
@@ -39,6 +37,14 @@ exports.getOccupations = function (req, res) {
 }
 
 exports.getLatestOccupation = function (req, res) {
-	res.send({latestOccupation: personInfo.latestOccupation});
-	console.log({latestOccupation: personInfo.latestOccupation});
+	res.send({latestOccupation: personInfo.occupations[personInfo.occupations.length -1]});
+	console.log({latestOccupation: personInfo.occupations[personInfo.occupations.length -1]});
+}
+
+exports.getHobbies = function (req, res) {
+	res.send({hobbies: personInfo.hobbies})
+}
+
+exports.getHobbiesByType = function (req, res) {
+	res.send(personInfo.hobbies[req.params.hobbyType])
 }
