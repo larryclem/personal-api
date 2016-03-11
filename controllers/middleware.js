@@ -12,3 +12,9 @@ exports.addHeaders = function (req, res, next) {
 	});
 	next();
 }
+
+exports.addId = function (req, res, next){
+	req.body.id = skills.length + 1;
+	next();
+}
+
